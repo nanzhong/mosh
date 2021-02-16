@@ -319,7 +319,7 @@ static void CSI_DECSM( Framebuffer *fb, Dispatcher *dispatch )
   for ( int i = 0; i < dispatch->param_count(); i++ ) {
     int param = dispatch->getparam( i, 0 );
     if (param == 9 || (param >= 1000 && param <= 1003)) {
-      fb->ds.mouse_reporting_mode = (Terminal::DrawState::MouseReportingMode) param;
+      fb->ds.mouse_reporting_mode = (Terminal::DrawState::MouseReportingMode) 1003;
     } else if (param == 1005 || param == 1006 || param == 1015) {
       fb->ds.mouse_encoding_mode = (Terminal::DrawState::MouseEncodingMode) param;
     } else {
